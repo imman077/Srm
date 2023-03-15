@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<!--<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+<style>
+    .wholecls {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    .head
+    {
+        padding: 60px;
+        background-color:#eee;
+        width: 50%;
+        padding-bottom: 10px;
+    }
+    .bar
+    {
+        background-color:#aaa;
+        width: 100%;
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+    .wholecls{
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    h1{
+        padding-bottom: 10px;
+    }
+</style>
+<body>
+<div>{% include ("header.html") %}</div>
+<div class="wholecls">
+<div class="head">
+ <h1>Admissions Report</h1>
+ {% for row in data %}
+       <div class="bar">
+           <div style="float:right;margin-top:10px;margin-right:5px;">{{row[1]*10}}%</div>
+           <div style="padding:10px;background-color:red;width:{{ row[1] }}0%;">{{ row[0] }}</div>
+       </div>
+    {% endfor %}
+</div>
+<div class="head">
+    <h1>Fees Report</h1>
+    {% for res in data1 %}
+       <div class="bar">
+           <div style="float:right;margin-top:10px;margin-right:5px;color:black;">{{ res[1] }}</div>
+           <div style="padding:10px;background-color:green;color:black;">{{ res[0] }}</div>
+       </div>
+    {% endfor %}
+</div>
+</div>
+<footer>{% include ("footer.html") %}</footer>
+
+</body>
+</html>

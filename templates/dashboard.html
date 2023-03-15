@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<style>
+
+body{
+    background-color: #eee;
+}
+
+.container {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+.container {
+  padding: 10px 0px 10px 0px;
+  padding: 40px;
+  }
+
+
+.flexdivision {
+  display: flex;
+  flex-wrap: wrap;
+  }
+.box
+{
+  width: 25%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(250, 250, 250, 0.7);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 7px;
+}
+
+.box:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.box span
+{
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 40px;
+  font-size: 60px;
+  width: 70px;
+  }
+
+.box p
+{
+  background-color: #1e90ff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+fieldset
+{
+  width: 100%;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 7px;
+}
+
+fieldset:focus{
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+fieldset legend{
+  text-align:center;
+  font-weight:bold;
+  background-color: green;
+  border-radius: 30px;
+  padding: 10px;
+  color: white;
+}
+
+</style>
+
+<body>
+<div>{% include ("header.html") %}</div>
+<div class="container">
+  <div class="flexdivision">
+    <fieldset>
+
+      <legend id="demo">STUDENT</legend>
+          <div class="box">
+
+      <span>{{ total }}</span>
+
+      <p>TOTAL <br>NO. OF STUDENTS</p>
+    </div>
+    <div class="box">
+<!--      <span>30</span>-->
+        <span>{{ pc }}</span>
+        <p>NO. OF PROGRAMMING STUDENTS</p>
+    </div>
+    <div class="box">
+      <span>{{ ac }}</span>
+      <p>NO. OF ACCOUNTS STUDENTS</p>
+    </div>
+    <div class="box">
+      <span>{{ mmc }}</span>
+      <p>NO. OF MULTIMEDIA STUDENTS</p>
+    </div>
+    </fieldset>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="flexdivision">
+    <fieldset>
+      <legend id="demo1">COURSE</legend>
+          <div class="box">
+              <span>{{ total1 }}</span>
+      <p>TOTAL <br>NO. OF COURSE</p>
+    </div>
+    <div class="box">
+      <span>{{ pc1 }}</span>
+      <p>NO. OF PROGRAMMING COURSE</p>
+    </div>
+    <div class="box">
+      <span>{{ ac1 }}</span>
+      <p>NO. OF ACCOUNTS COURSE</p>
+    </div>
+    <div class="box">
+      <span>{{ mmc1 }}</span>
+      <p>NO. OF MULIMEDIA COURSE</p>
+    </div>
+    </fieldset>
+
+  </div>
+</div>
+<footer>{% include ("footer.html") %}</footer>
+<script>
+document.getElementById("demo").onmouseover = function() {mouseOver()};
+document.getElementById("demo").onmouseout = function() {mouseOut()};
+
+function mouseOver() {
+  document.getElementById("demo").innerHTML = "<img style='height:100px;width:100px;' src ='./static/image/student.jpg'/>";
+}
+
+function mouseOut() {
+  document.getElementById("demo").innerHTML = "STUDENT";
+}
+
+document.getElementById("demo1").onmouseover = function() {mouseOver1()};
+document.getElementById("demo1").onmouseout = function() {mouseOut1()};
+
+function mouseOver1() {
+  document.getElementById("demo1").innerHTML = "<img style='height:100px;width:100px;' src ='./static/image/course1.jpg'/>";
+}
+
+function mouseOut1() {
+  document.getElementById("demo1").innerHTML = "COURSE";
+}
+</script>
+</body>
+</html>

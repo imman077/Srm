@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body{
+      background-color: #eee;
+}
+
+.rr {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+h2
+{
+    text-align:center;
+    font-weight:bold;
+}
+
+th
+{
+    background-color:blue;
+    padding:15px;
+    color:white;
+    text-align:center;
+}
+
+td
+{
+    background-color:white;
+    color:black;
+    padding:15px;
+    text-align:center;
+}
+
+.ent
+{
+     background-color:green;
+     color:white;
+     padding:6px;
+     border-radius:10px;
+     text-decoration:none;
+     text-align:center;
+}
+
+.edt
+{
+      background-image:linear-gradient(90deg,#3D4EB7, #1125A3);
+      color:white;
+      padding:8px;
+      border-radius:10px;
+      text-decoration:none;
+
+}
+
+.del
+{
+       background-image:linear-gradient(90deg,#f00, #900);
+       color:yellow;
+       padding:6px;
+       border-radius: 10px;
+       text-decoration:none;
+
+}
+
+.pad
+{
+  padding: 50px;
+}
+
+.cc
+{
+       text-align:center;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+.footer{
+  width: 100%;
+  align-self: flex-end;
+  position: fixed;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  bottom: 0px;
+}
+
+.pad{
+    min-height:45vh;
+}
+
+</style>
+</head>
+<body>
+<div>{% include ("header.html") %}</div>
+<div class="pad">
+<h2>STAFF REGISTER TABLE</h2>
+<div style="overflow-x:auto;" class="rr">
+  <table>
+    <tr>
+      <th>Sl.No</th>
+            <th>Staff Id</th>
+            <th>Staff Name</th>
+            <th>Staff Address</th>
+            <th>Staff Major Subject</th>
+
+      <th colspan="2"><a class="ent"  href="/staffregentry">New Entry</a></th>
+    </tr>
+      {% for row in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td class="cc">
+            <a class="edt" href="/staffregedit?RN={{ row[0] }}">Edit</a>
+        </td>
+        <td>
+            <a class="del" href="/staffregdelete?RN={{ row[0] }}">Delete</a>
+        </td>
+    </tr>
+        {% endfor %}
+  </table>
+</div>
+</div>
+<footer class="footer">{% include ("footer.html") %}</footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Register Edit</title>
+</head>
+<style>
+    .te
+    {
+        padding:10px;
+    }
+    .qq
+    {
+        padding:10px;
+        width:100px;
+        border-radius:10px;
+        background-color:#22D41F;
+    }
+    td
+    {
+        padding:10px;
+    }
+     h2{
+        text-align: center;
+        background-color: green;
+        margin-top: 10px;
+        font-size: 24px;
+        color: white;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+<div>{% include ("header.html") %}</div>
+<h2>STAFF REGISTER EDIT</h2>
+<form action="/staffregupdate" method="post">
+    {% for row in data %}
+    <table>
+      <tr>
+        <td>Id of the<br> Staff</td>
+        <td><input type="text" class="te" name="id" value="{{ row[0] }}"></td>
+      </tr>
+        <tr>
+        <td>Name of the<br> Staff</td>
+        <td><input type="text" class="te" name="name" value="{{ row[1] }}"></td>
+      </tr>
+        <tr>
+        <td>Address  of the <br> Staff</td>
+        <td><input type="text" class="te" name="address" value="{{ row[2]}}"></td>
+      </tr>
+        <tr>
+        <td>Major Subject of the Staff</td>
+        <td><input type="text" class="te" name="subject" value="{{ row[3] }}"></td>
+      </tr>
+        <tr>
+            <th colspan="2">
+                <input type="submit" value="Update" class="qq">
+            </th>
+        </tr>
+    </table>
+    {% endfor %}
+</form>
+<div>{% include ("footer.html") %}</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enquiry View</title>
+</head>
+<style>
+    .te
+    {
+        padding:10px;
+    }
+    .qq
+    {
+        padding:10px;
+        width:100px;
+        border-radius:10px;
+        background-color:#22D41F;
+    }
+    td
+    {
+        padding:10px;
+    }
+
+    .yy
+    {
+    display:flex;
+    flex-wrap: wrap;
+    }
+    table
+    {
+    padding-right:20px;
+    padding-bottom:60px;
+    padding: 20px 20px 60px 10px;
+    }
+    h2{
+        text-align: center;
+        background-color: green;
+        margin-top: 10px;
+        font-size: 24px;
+        color: white;
+        padding: 5px;
+    }
+</style>
+<body>
+<div>{% include ("header.html") %}</div>
+<hr>
+<h2>ENQUIRY VIEW</h2>
+<hr>
+<hr>
+<form action="/studentregview" method="post" class="yy">
+    {% for row in data %}
+    <table>
+      <tr>
+        <td>Full Name of the<br> Candidate</td>
+        <td><input type="text" class="te" name="name" value="{{ row[0] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Date of Birth of the<br> Candidate</td>
+        <td><input type="date" class="te" name="dob" value="{{ row[1] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Email of the <br> Candidate</td>
+        <td><input type="text" class="te" name="email" value="{{ row[2]}}" disabled></td>
+      </tr>
+        <tr>
+        <td>Mobile Number of the Candidate</td>
+        <td><input type="number" class="te" name="phnoc" value="{{ row[3] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Gender of the Candidate</td>
+        <td><input type="text" class="te" name="gender" value="{{ row[4] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Educational Qualification of the<br> Candidate</td>
+        <td><input type="text" class="te" name="eduqua" value="{{ row[5] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Serial No of the<br> Candidate</td>
+        <td><input type="text" class="te" name="slno" value="{{ row[6] }}" disabled></td>
+      </tr>
+        <tr>
+            <td>Course Name of the<br> Candidate</td>
+            <td><input type="text" class="te" name="course" value="{{ row[7] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Date of Admission of the<br> Candidate</td>
+        <td><input type="date" class="te" name="doa" value="{{ row[8] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Aadhar Card Number<br>of the Candidate </td>
+        <td><input type="number" class="te" name="aadhar" value="{{ row[9] }}" disabled></td>
+      </tr>
+        <tr>
+         <td>Certificate Issued Date<br> of the Candidate</td>
+        <td><input type="date" class="te" name="idate" value="{{ row[10] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>Certificate Expiry Date<br> of the Candidate</td>
+        <td><input type="date" class="te" name="edate" value="{{ row[11] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>Address of the<br> Candidate</td>
+        <td><input type="text" class="te" name="address" value="{{ row[12] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>Pincode of the<br> Candidate</td>
+        <td><input type="number" class="te" name="pincode" value="{{ row[13] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>State of the<br> Candidate</td>
+        <td><input type="text" class="te" name="state" value="{{ row[14] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>City of the<br> Candidate</td>
+        <td><input type="text" class="te" name="city" value="{{ row[15] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>Father Name of the<br> Parents</td>
+        <td><input type="text" class="te" name="fname" value="{{ row[16] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>Mother Name of the<br> Parents</td>
+        <td><input type="text" class="te" name="mname" value="{{ row[17] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>Mobile Number of the<br> Parents</td>
+        <td><input type="number" class="te" name="phnop" value="{{ row[18] }}" disabled></td>
+      </tr>
+         <tr>
+         <td>Religion of the<br> candidate</td>
+        <td><input type="text" class="te" name="religion" value="{{ row[19] }}" disabled></td>
+      </tr>
+        <tr>
+         <td>Nationality of the<br> Parents</td>
+        <td><input type="text" class="te" name="nation" value="{{ row[20] }}" disabled></td>
+      </tr>
+    </table>
+    {% endfor %}
+</form>
+<footer>{% include ("footer.html") %}</footer>
+</body>
+</html>

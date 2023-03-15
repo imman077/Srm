@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fees View</title>
+</head>
+<style>
+    .te
+    {
+        padding:10px;
+    }
+    .qq
+    {
+        padding:10px;
+        width:100px;
+        border-radius:10px;
+        background-color:#22D41F;
+    }
+    td
+    {
+        padding:10px;
+    }
+    .ifstyle{
+      text-align: center;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      margin: 200px 0px 200px 0px;
+      color: red;
+      outline-color: black;
+      outline-style: solid;
+      width: auto;
+    }
+
+    <><><><><><>
+  .screen{
+          padding: 200px 0px 200px 0px;
+  }
+
+    .alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  text-align: center;
+  margin : 200px 0px 200px 0px;
+  }
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+.footer{
+  .footer{
+  width: 100%;
+  align-self: flex-end;
+  position: fixed;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  bottom: 0px;
+}
+
+</style>
+<body>
+<div>{% include ("header.html") %}</div>
+<h2>FEES VIEW</h2>
+<form action="/feesview" method="post">
+{%if(data == [])%} <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Warning!</strong> --No Results Found--
+</div>
+  {%else%}
+    {% for row in data %}
+<div class="head">
+    <table>
+      <tr>
+        <td>Student Id </td>
+        <td><input type="number" class="te" name="slno" value="{{ row[0] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Transaction Id</td>
+        <td><input type="text" class="te" name="id" value="{{ row[1] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Transaction Date</td>
+        <td><input type="text" class="te" name="tdate" value="{{ row[2]}}" disabled></td>
+      </tr>
+        <tr>
+        <td>Transaction Month</td>
+        <td><input type="text" class="te" name="tmonth" value="{{ row[3] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Transaction Year</td>
+        <td><input type="text" class="te" name="tyear" value="{{ row[4] }}" disabled></td>
+      </tr>
+        <tr>
+        <td>Transaction Amount</td>
+        <td><input type="text" class="te" name="tamount" value="{{ row[5] }}" disabled></td>
+      </tr>
+    </table>
+  <br>
+  <hr>
+    </div>
+    {% endfor %}
+  {%endif%}
+</form>
+<div class="footer">{% include ("footer.html") %}</div>
+</body>
+</html>

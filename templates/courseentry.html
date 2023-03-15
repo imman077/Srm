@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+*{
+  margin:0;
+  padding:0;
+}
+div.wrapper{
+  font-family: 'Open Sans', sans-serif;
+  background-color:#ccc;
+  min-height:700px;
+  height:100vh;
+  padding-top:50px;
+  font-size:16px;
+}
+.container{
+  padding:25px 0;
+  max-width:400px;
+  margin:0 auto;
+  background-color:white;
+  border-radius:3px;
+  box-shadow:0 0 30px rgba(0,0,0,.3)
+}
+.container h1{
+  text-align:center;
+  margin-bottom:25px;
+  font-weight:normal;
+}
+form{
+  width:80%;
+  margin:0 auto;
+}
+div.group{
+  margin-top:20px;
+}
+label{
+  display:block;
+  font-size:14px;
+  opacity:.7;
+  margin-bottom:7px;
+}
+input{
+  width:100%;
+  border:none;
+  outline:none;
+}
+div.group input{
+  opacity:1;
+  padding:10px 0;
+  color:black;
+  border-bottom:1px solid #ccc;
+}
+input[type="submit"]{
+  margin-top:25px;
+  padding:15px;
+  border-radius:25px;
+  background-color:rgba(0,0,0,.85);
+  color:white;
+  box-shadow:0 10px 5px -5px rgba(0,0,0,.4);
+  cursor:pointer;
+}
+</style>
+<body>
+<div class="wrapper">
+  <div class="container">
+    <h1>Course Entry</h1>
+    <form action="/coursesave" method="post" enctype="multipart/form-data">
+      <div class="group">
+        <label for="name">
+          Course Name:
+        </label>
+          <input type="text" placeholder="Enter Course Name" name="name" id="name"/>
+      </div>
+      <div class="group">
+        <label for="image">
+          Course Image:
+        </label>
+          <input type="file" placeholder="Enter Course Image" name="file" id="image"/>
+      </div>
+      <div class="group">
+        <label for="duration">
+          Duration:
+        </label>
+        <input type="text" placeholder="Enter Course Duration" name="duration" id="duration"/>
+      </div>
+      <div class="group">
+        <label for="fees">
+         Fees:
+        </label>
+        <input type="number" placeholder="Enter Course Fees" name="fees" id="fees">
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

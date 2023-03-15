@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentRegister Edit</title>
+</head>
+<style>
+    .te
+    {
+        padding:10px;
+    }
+    .qq
+    {
+        padding:10px;
+        width:100px;
+        border-radius:10px;
+        background-color:#22D41F;
+    }
+    td
+    {
+        padding:10px;
+    }
+</style>
+<body>
+<form action="/courseupdate" method="post">
+    {% for row in data %}
+    <table>
+        <tr>
+        <td>Course Name</td>
+        <td><input type="text" class="te" name="name" value="{{ row[0] }}"></td>
+      </tr>
+      <tr>
+        <td>Course Image</td>
+        <td><input type="text" class="te" name="image" value="{{ row[1] }}"></td>
+      </tr>
+        <tr>
+        <td>Course Duration</td>
+        <td><input type="text" class="te" name="duration" value="{{ row[2] }}"></td>
+      </tr>
+        <tr>
+        <td>Course Fees</td>
+        <td><input type="number" class="te" name="fees" value="{{ row[3]}}"></td>
+        <tr>
+            <th colspan="2">
+                <input type="submit" value="Update" class="qq">
+            </th>
+        </tr>
+    </table>
+    {% endfor %}
+</form>
+</body>
+</html>
